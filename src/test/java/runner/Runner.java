@@ -6,13 +6,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"json:target/cucumber.json"},
+        plugin = {"json:target/cucumber.json", "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "steps",
-        tags = "@regression",
+        tags = "@temp",
         // run only those feature file that has @smoke and @regression tag.
         // tags = "@HR-5 or @HR-6", // run only those feature file that has either @HR-5 or @HR-6 tag.
-        dryRun = false
+        dryRun = true
 )
 public class Runner {
 
