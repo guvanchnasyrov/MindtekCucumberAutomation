@@ -15,7 +15,7 @@ public class Driver {
 
     public static WebDriver getDriver() {
         String browser = Configuration.getProperty("browser");
-        if (driver == null || ((RemoteWebDriver) driver).getSessionId() == null) {
+        if (driver == null || ((RemoteWebDriver) driver).getSessionId() == null){
             if (browser.equals("chrome")) {
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver(); // RemoteWebDriver

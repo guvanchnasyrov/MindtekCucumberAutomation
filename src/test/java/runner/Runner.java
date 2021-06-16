@@ -9,10 +9,10 @@ import org.junit.runner.RunWith;
         plugin = {"json:target/cucumber.json", "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "steps",
-        tags = "@temp",
+        tags = "@HR-0614",
         // run only those feature file that has @smoke and @regression tag.
         // tags = "@HR-5 or @HR-6", // run only those feature file that has either @HR-5 or @HR-6 tag.
-        dryRun = true
+        dryRun = false
 )
 public class Runner {
 

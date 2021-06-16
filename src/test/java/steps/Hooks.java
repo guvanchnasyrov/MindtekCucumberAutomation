@@ -12,23 +12,26 @@ import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
-    WebDriver driver = Driver.getDriver();
-
     @Before
-    public void setUp(){
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    public void setUp(Scenario scenario){
+        if(scenario.getSourceTagNames().contains("@ui")) {
+            WebDriver driver = Driver.getDriver();
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        }
     }
-
 
     @After
     public void tearDown(Scenario scenario) throws InterruptedException {
-        if (scenario.isFailed()) {
-            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-            scenario.embed(screenshot, "image/png");
+        if(scenario.getSourceTagNames().contains("@ui")) {
+            WebDriver driver = Driver.getDriver();
+            if (scenario.isFailed()) {
+                byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+                scenario.embed(screenshot, "image/png");
+            }
+            Thread.sleep(5000);
+            driver.quit();
         }
-        Thread.sleep(5000);
-        driver.quit();
     }
 
 }
