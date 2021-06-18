@@ -83,12 +83,12 @@
 
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>oracle</id>
-            <url>http://www.datanucleus.org/downloads/maven2/</url>
-        </repository>
-    </repositories>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>oracle</id>-->
+<!--            <url>http://www.datanucleus.org/downloads/maven2/</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
 <!--    <build>-->
 <!--        <plugins>-->
