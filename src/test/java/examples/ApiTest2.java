@@ -1,6 +1,7 @@
 package examples;
 
 import io.restassured.response.Response;
+import org.openqa.selenium.support.ui.Select;
 import pojos.Employee;
 import utilities.ApiUtils;
 
@@ -21,6 +22,7 @@ public class ApiTest2 {
         System.out.println(responseBody.getJob().getSalary());
         System.out.println(responseBody.getDepartment().getLocation().getLocationCity());
         System.out.println(responseBody.getDepartment().getDepartmentName());
+
 
 
 
